@@ -27,5 +27,8 @@ export class DbTaskService {
     `, []);
   }
 
-  // Implementar las demás funciones según los requerimientos
+  async checkActiveSession(): Promise<boolean> {
+    const res = await this.dbInstance.executeSql('SELECT * FROM sesion_data WHERE active = 1', []);
+    return res.rows.length > 0;
+  }
 }
