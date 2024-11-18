@@ -9,10 +9,11 @@
     <ion-segment-button value="mis-datos">Mis Datos</ion-segment-button>
     <ion-segment-button value="experiencia-laboral">Experiencia Laboral</ion-segment-button>
     <ion-segment-button value="certificaciones">Certificaciones</ion-segment-button>
-    <ion-button routerLink="/map">Go to Map</ion-button>
   </ion-segment>
 
   <app-mis-datos *ngIf="selectedTab === 'mis-datos'"></app-mis-datos>
   <app-experiencia-laboral *ngIf="selectedTab === 'experiencia-laboral'"></app-experiencia-laboral>
   <app-certificaciones *ngIf="selectedTab === 'certificaciones'"></app-certificaciones>
+
+  <ion-button routerLink="/map">Go to Map</ion-button>
 </ion-content>
