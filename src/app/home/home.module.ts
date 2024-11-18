@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { HomePage } from './home.page';
 import { RouterModule } from '@angular/router';
+import { MisDatosComponent } from '../mis-datos/mis-datos.component';
+import { ExperienciaLaboralComponent } from '../experiencia-laboral/experiencia-laboral.component';
+import { CertificacionesComponent } from '../certificaciones/certificaciones.component';
 
 @NgModule({
   imports: [
@@ -17,6 +20,11 @@ import { RouterModule } from '@angular/router';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    MisDatosComponent,
+    ExperienciaLaboralComponent,
+    CertificacionesComponent
+  ]
 })
 export class HomePageModule { }

@@ -1,14 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-certificaciones',
   templateUrl: './certificaciones.component.html',
-  styleUrls: ['./certificaciones.component.scss'],
+  styleUrls: ['./certificaciones.component.scss']
 })
-export class CertificacionesComponent  implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
-}
+export class CertificacionesComponent { }

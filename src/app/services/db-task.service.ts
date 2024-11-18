@@ -5,7 +5,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
   providedIn: 'root'
 })
 export class DbTaskService {
-  private dbInstance: SQLiteObject;
+  private dbInstance: SQLiteObject | undefined;
 
   constructor(private sqlite: SQLite) {}
 
@@ -18,6 +18,7 @@ export class DbTaskService {
   }
 
   async createTables() {
+    if (!this.dbInstance) return;
     await this.dbInstance.executeSql(`
       CREATE TABLE IF NOT EXISTS sesion_data (
         user_name TEXT PRIMARY KEY NOT NULL,
@@ -28,6 +29,7 @@ export class DbTaskService {
   }
 
   async checkActiveSession(): Promise<boolean> {
+    if (!this.dbInstance) return false;
     const res = await this.dbInstance.executeSql('SELECT * FROM sesion_data WHERE active = 1', []);
     return res.rows.length > 0;
   }

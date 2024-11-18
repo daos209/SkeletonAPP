@@ -1,14 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-mis-datos',
   templateUrl: './mis-datos.component.html',
-  styleUrls: ['./mis-datos.component.scss'],
+  styleUrls: ['./mis-datos.component.scss']
 })
-export class MisDatosComponent  implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
-}
+export class MisDatosComponent { }
