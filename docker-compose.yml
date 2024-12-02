@@ -1,12 +1,28 @@
 version: '3.8'
 
 services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: my.secretpassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   app:
     build: .
+    container_name: ionic_app
     ports:
-      - "3000:3000"
+      - "8100:8100"
     volumes:
       - .:/app
       - /app/node_modules
-    environment:
-      - NODE_ENV=development
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
