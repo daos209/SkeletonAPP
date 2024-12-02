@@ -8,11 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ApiService {
   private baseUrl = 'https://api.example.com'; // Reemplaza con la URL de tu API
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) {}
 
@@ -37,5 +33,15 @@ export class ApiService {
         retry(2),
         catchError(this.handleError)
       );
+  }
+
+  // Método GET para obtener los usuarios
+  getUsers(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
+
+  // Método POST para agregar un nuevo usuario
+  addUser(user: any): Observable<any> {
+    return this.http.post(this.apiUrl, user);
   }
 }

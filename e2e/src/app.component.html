@@ -1,0 +1,21 @@
+<ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Welcome to skeleton-app!
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+      <ion-button class="camera-button" (click)="accessCamera()">Access Camera</ion-button>
+      <div class="camera-view" *ngIf="cameraActive">
+        <!-- Vista de la cámara -->
+      </div>
+  
+      <ion-button class="gps-button" (click)="accessGPS()">Access GPS</ion-button>
+      <div class="gps-coordinates" *ngIf="gpsActive">
+        Latitude: {{ latitude }}, Longitude: {{ longitude }}
+      </div>
+    </ion-content>
+  </ion-app>
