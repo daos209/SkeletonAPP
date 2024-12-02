@@ -17,6 +17,10 @@ export const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent
+  },
+  {
+    path: 'camara',
+    loadComponent: () => import('./camara/camara.page').then( m => m.CamaraPage)
   }
 ];
 
