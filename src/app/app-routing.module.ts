@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard'; // Actualiza la ruta aquí
 import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
@@ -11,12 +11,17 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) // Actualiza la ruta aquí
+  },
+  {
     path: 'map',
-    component: MapComponent
+    component: MapComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
