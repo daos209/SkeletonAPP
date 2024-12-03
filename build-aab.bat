@@ -1,5 +1,7 @@
-
 @echo off
+
+:: Establecer la variable de entorno para usar el algoritmo de hash heredado
+set NODE_OPTIONS=--openssl-legacy-provider
 
 :: Navegar al directorio del proyecto
 cd /d "%~dp0"
