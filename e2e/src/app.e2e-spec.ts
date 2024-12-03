@@ -38,3 +38,14 @@ describe('workspace-project App', () => {
     // Limpieza si es necesario
   });
 });
+
+describe('Pruebas End-To-End', () => {
+  it('debería tener un título', () => {
+    browser.get('/');
+    browser.getTitle().then((title) => {
+      expect(title).toEqual('Mi Aplicación');
+    });
+  });
+
+  // ...otras pruebas...
+});

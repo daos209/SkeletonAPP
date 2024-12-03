@@ -1,0 +1,20 @@
+
+// ...existing code...
+
+android {
+    // ...existing code...
+    bundle {
+        // Configuración para generar el APP Bundle
+        abi {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+// ...existing code...
